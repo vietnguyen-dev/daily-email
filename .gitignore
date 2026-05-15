@@ -12,6 +12,7 @@
 **/terraform.tfvars
 **/terraform.tfvars.json
 **/.terraform.lock.hcl
+**/*.zip
 crash.log
 crash.*.log
 override.tf
