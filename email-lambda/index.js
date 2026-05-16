@@ -2,8 +2,8 @@ import { SESv2Client, SendEmailCommand } from "@aws-sdk/client-sesv2";
 
 const ses = new SESv2Client({});
 
-const FROM_EMAIL = "baby@nguyenbytes.com";
-const TO_EMAIL = "vera.zh195@gmail.com";
+const FROM_EMAIL = process.env.FROM_EMAIL;
+const TO_EMAIL = process.env.TO_EMAIL;
 const SUBJECT = "Thinking of you";
 const MESSAGES = [
   "I love you so much.",
@@ -17,6 +17,10 @@ const MESSAGES = [
 ];
 
 export const handler = async () => {
+  if (!FROM_EMAIL || !TO_EMAIL) {
+    throw new Error("Missing required email Lambda environment configuration.");
+  }
+
   const textBody = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
 
   const command = new SendEmailCommand({
