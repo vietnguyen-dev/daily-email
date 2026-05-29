@@ -4,10 +4,10 @@ Small project for sending a short, affectionate email to Vera.
 
 It uses:
 
-- Terraform to create the IAM roles, Lambdas, and SNS topic
+- Terraform to create the IAM roles, Lambda, and EventBridge schedule
 - Node.js 22 for the Lambda runtime
 - Amazon SES v2 to send the email
-- Amazon SNS to send the SMS
+- Amazon EventBridge Scheduler to run the Lambda daily
 
 ## What It Does
 
@@ -16,6 +16,9 @@ The Lambda picks a random message from a small list in [email-lambda/index.js](/
 - From: `baby@nguyenbytes.com`
 - To: `vera.zh195@gmail.com`
 - Subject: `Thinking of you`
+
+Terraform also creates an EventBridge Scheduler schedule named `vera-daily-email-daily`.
+It invokes the Lambda every day at 5:30 PM in the `America/Los_Angeles` timezone.
 
 ## Project Layout
 
@@ -26,16 +29,9 @@ The Lambda picks a random message from a small list in [email-lambda/index.js](/
 |   |-- package.json
 |   `-- package-lock.json
 |-- modules/
-|   |-- email-lambda/
-|   |   `-- main.tf
-|   `-- sns-lambda/
+|   `-- email-lambda/
 |       `-- main.tf
 |-- email-lambda.zip
-|-- sns-lambda/
-|   |-- index.js
-|   |-- package.json
-|   `-- package-lock.json
-|-- sns-lambda.zip
 |-- main.tf
 `-- README.md
 ```
@@ -55,17 +51,11 @@ npm install
 npm run zip
 ```
 
-3. Install SNS Lambda dependencies:
+3. Plan or apply Terraform with the local variables file:
 
 ```bash
-cd ../sns-lambda
-npm install
-```
-
-4. Build the SNS deployment ZIP:
-
-```bash
-npm run zip
+terraform plan -var-file=variables.tfvars
+terraform apply -var-file=variables.tfvars
 ```
 
 ## Important Notes
@@ -73,7 +63,7 @@ npm run zip
 - SES must be able to send from `baby@nguyenbytes.com`.
 - If the AWS account is still in SES sandbox mode, the recipient usually also needs to be verified.
 - The email addresses and messages are currently hardcoded in `email-lambda/index.js`.
-- `email-lambda.zip` and `sns-lambda.zip` must exist before infrastructure updates the function code.
+- `email-lambda.zip` must exist before infrastructure updates the function code.
 
 ## Quick Changes
 
