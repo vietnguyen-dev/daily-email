@@ -27,16 +27,19 @@ A small personal project for learning Terraform by building a daily email servic
     - IAM Roles
 
 ## Reflection / What I Learned:
-- Getting Used to Cloud Configuration
-    Before learning about Terraform I would primarily configure AWS resources using the AWS console. It was very tedious and very much a pain to work with. But learning how to use Terraform effectively even at a basic level is game changing for me. I am now now able to provision cloud resources with a few lines of configuration and a few commands rather than painstakingly manually going through the AWS Console! Using the Cloud used to be kind of terrifiying to me because I would always be charged for things I never knew about. Even just keeping resources you don't use alive costs money! Now I am able to keep costs low and have a lot more agency in my Cloud Automation Engineering career Journey.
 
-- Appreciating Serverless Architechure
-One thing I really appreciate about AWS is that they were the first to promote Serverless Architechure. The more I learn about systems design the more I see why companies like AWS and other cloud providers are so successful. Keeping a server from crashing is hard job all on its own, making sure it handles requests with queues, load balancers, etc.. is a whole other beast! Having services like SQS and ALB are revolutionary. For a "reasonable" fee, you can have AWS do the heavy lifting on parts of your infrastructure you are not comportable with. I know a lot of people in the tech industry have a lot of opinions about Cloud Providers and how tricky they are to work with, but it is still loads better than having to actually manage physical machines!
+### Getting Used to Cloud Configuration
+
+Before learning about Terraform I would primarily configure AWS resources using the AWS console. It was very tedious and very much a pain to work with. But learning how to use Terraform effectively even at a basic level is game changing for me. I am now now able to provision cloud resources with a few lines of configuration and a few commands rather than painstakingly manually going through the AWS Console! Using the Cloud used to be kind of terrifiying to me because I would always be charged for things I never knew about. Even just keeping resources you don't use alive costs money! Now I am able to keep costs low and have a lot more agency in my Cloud Automation Engineering career Journey.
+
+### Appreciating Serverless Architecture
+
+One thing I really appreciate about AWS is that they were the first to promote serverless architecture. The more I learn about systems design the more I see why companies like AWS and other cloud providers are so successful. Keeping a server from crashing is hard job all on its own, making sure it handles requests with queues, load balancers, etc.. is a whole other beast! Having services like SQS and ALB are revolutionary. For a "reasonable" fee, you can have AWS do the heavy lifting on parts of your infrastructure you are not comportable with. I know a lot of people in the tech industry have a lot of opinions about Cloud Providers and how tricky they are to work with, but it is still loads better than having to actually manage physical machines!
 
 - Security Concerns
 One thing I was always had pains with in AWS was IAM roles. Manually creating them using the AWS Console took time out of my day that I could've been using to do anything else. Many people who are so called "indie developers" hate them with a passion. But with Terraform, creating and provisioning them has never been easier. When someone starts to see software in the bigger picture and not just developing features, security becomes such an much bigger issue. I think many people instictively understand the principle of least privelage, but it is actually hard to pin point how that actually works. tThat is where my expertise comes in!
 
--Final Thoughts
+- Final Thoughts
 I was getting really burnt out being just a Full Stack Developer. Truth be told that kind of job doesnt exist anymore. Code is now so easily created by AI, being able to produce code itself means nothing. A lot of the code in this repository is AI generated, but I still needed to read through the Terraform documentation, watch tutorials, and play with it in the terminal to really understand it. This project is definitely the start of a new chapter in my Career Journey!
 
 ## Possible Next steps!
