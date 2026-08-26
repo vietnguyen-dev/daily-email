@@ -83,7 +83,7 @@ I was getting really burnt out being just a Full Stack Developer. Truth be told 
    cd ..
    ```
 
-4. Initialize Terraform.
+4. Initialize Terraform. This project uses Terraform's default local backend, so no `backend.hcl` file is required or created.
 
    ```bash
    terraform init
