@@ -45,16 +45,60 @@ I was getting really burnt out being just a Full Stack Developer. Truth be told 
 - Instead of having event bridge trigger the lambda, create step function that triggers the database lambda, which sends the message to the SES Lambda
 - Since RDS or DynamoDB would be a private databse, put all resources into their proper private and Public subnets within the VPC
 
-## Do it Yourself! 
-Prerequisite
+## Do it Yourself!
+
+### Prerequisites
+
 - Terraform
 - AWS CLI
-- An Email or Domain that is a verified idenity in AWS SES
+- An email address or domain verified in Amazon SES
 
-1. Clone this repository 
-2. In root run terraform init
-3. create a variables.tfvars file in root that matches with variables in variables.tf and example.tfvars
-- from_email should be format of {any_text_here}@{verified_idenity}
-4. (optional) run Terraform fmt, terraform validate, terraform plan -var-file=variables.tfvars -auto-approve, as a test step
-5. run terraform apply -var-file=variables.tfvars -auto-approve to provision project
-6. run terraform destroy -var-file=variables.tfvars -auto-approve to remove project
+1. Clone this repository and enter the project directory.
+
+   ```bash
+   git clone <repository-url>
+   cd daily-email
+   ```
+
+2. Create your local variables file from the provided template, then update its placeholder values.
+
+   ```bash
+   cp example.tfvars variables.tfvars
+   ```
+
+   Set `from_email` to an address that uses your SES-verified identity.
+
+3. Install dependencies and create the Lambda deployment package.
+
+   ```bash
+   cd email-lambda
+   npm install
+   npm run zip
+   cd ..
+   ```
+
+4. Initialize Terraform.
+
+   ```bash
+   terraform init
+   ```
+
+5. Optionally format, validate, and review the proposed changes.
+
+   ```bash
+   terraform fmt -check -recursive
+   terraform validate
+   terraform plan -var-file=variables.tfvars
+   ```
+
+6. Provision the project.
+
+   ```bash
+   terraform apply -var-file=variables.tfvars -auto-approve
+   ```
+
+7. Remove the project when finished to avoid ongoing AWS charges.
+
+   ```bash
+   terraform destroy -var-file=variables.tfvars -auto-approve
+   ```
