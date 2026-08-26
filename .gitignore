@@ -10,6 +10,7 @@
 **/*.tfstate.*
 **/*.tfvars
 **/*.tfvars.json
+!example.tfvars
 **/terraform.tfvars
 **/terraform.tfvars.json
 **/.terraform.lock.hcl
