@@ -7,7 +7,7 @@ A small personal project for learning Terraform by building a daily email servic
 
 ## 🎯 Goals of this Project:
 - To understand how to effectively use Terraform to provision, update, and destroy cloud infrastructure
-- Understanding basics of secure serverless architechure
+- Understanding how to develop secure serverless architecture
 - How to properly provision a Terraform stack to be reproducible
 
 ## 🧰 Key Skills Used
@@ -21,7 +21,7 @@ A small personal project for learning Terraform by building a daily email servic
     - Outputs
     - Dependency management
     - Planning and applying infrastructure changes
-- <img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS" width="20" height="20"> **AWS**
+- <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" width="20" height="20"> **AWS**
     - EventBridge 
     - Lambda 
     - Simple Email Service
@@ -31,25 +31,25 @@ A small personal project for learning Terraform by building a daily email servic
 
 ### ☁️ Getting Used to Cloud Configuration
 
-Before learning about Terraform I would primarily configure AWS resources using the AWS console. It was very tedious and very much a pain to work with. But learning how to use Terraform effectively even at a basic level is game changing for me. I am now now able to provision cloud resources with a few lines of configuration and a few commands rather than painstakingly manually going through the AWS Console! Using the Cloud used to be kind of terrifiying to me because I would always be charged for things I never knew about. Even just keeping resources you don't use alive costs money! Now I am able to keep costs low and have a lot more agency in my Cloud Automation Engineering career Journey.
+Before learning about Terraform, I primarily configured AWS resources using the AWS Console. It was tedious and time-consuming. Learning to use Terraform effectively, even at a basic level, has been game-changing for me. I can now provision cloud resources with a few lines of configuration and a few commands instead of painstakingly working through the AWS Console. Using the cloud used to be intimidating because I worried about being charged for resources I did not know were running. Even keeping unused resources alive costs money. Terraform gives me more control over costs and more agency in my cloud automation engineering career journey.
 
 ### ⚡ Appreciating Serverless Architecture
 
-One thing I really appreciate about AWS is that they were the first to promote serverless architecture. The more I learn about systems design the more I see why companies like AWS and other cloud providers are so successful. Keeping a server from crashing is hard job all on its own, making sure it handles requests with queues, load balancers, etc.. is a whole other beast! Having services like SQS and ALB are revolutionary. For a "reasonable" fee, you can have AWS do the heavy lifting on parts of your infrastructure you are not comportable with. I know a lot of people in the tech industry have a lot of opinions about Cloud Providers and how tricky they are to work with, but it is still loads better than having to actually manage physical machines!
+One thing I appreciate about AWS is its early promotion of serverless architecture. The more I learn about systems design, the more I understand why cloud providers are so successful. Keeping a server from crashing is hard enough; ensuring it handles requests with queues, load balancers, and other infrastructure is another challenge. Services such as SQS and ALB let AWS handle parts of the infrastructure that I am less comfortable managing. Cloud providers can be complex, but they are often more manageable than operating physical machines directly.
 
 ### 🔐 Security Concerns
 
-One thing I was always had pains with in AWS was IAM roles. Manually creating them using the AWS Console took time out of my day that I could've been using to do anything else. Many people who are so called "indie developers" hate them with a passion. But with Terraform, creating and provisioning them has never been easier. When someone starts to see software in the bigger picture and not just developing features, security becomes such an much bigger issue. I think many people instictively understand the principle of least privelage, but it is actually hard to pin point how that actually works. tThat is where my expertise comes in!
+One area of AWS that I found challenging was IAM roles. Manually creating them in the AWS Console took time that I could have spent elsewhere. With Terraform, creating and provisioning them is much easier. When you view software beyond feature development, security becomes a much bigger concern. Many people instinctively understand the principle of least privilege, but applying it in practice can be difficult. That is where my expertise comes in.
 
 ### ✨ Final Thoughts
 
-I was getting really burnt out being just a Full Stack Developer. Truth be told that kind of job doesnt exist anymore. Code is now so easily created by AI, being able to produce code itself means nothing. A lot of the code in this repository is AI generated, but I still needed to read through the Terraform documentation, watch tutorials, and play with it in the terminal to really understand it. This project is definitely the start of a new chapter in my Career Journey!
+The scope of the job market has changed as AI makes code easier to create. This project was AI-assisted, but I still needed to read the Terraform documentation, watch tutorials, and experiment in the terminal to understand the work. This project is the start of a new chapter in my career journey.
 
 ## 🚀 Possible Next Steps!
-- Add a dedicated VPC and an RDS or DynamoDB databse
+- Add a dedicated VPC and an RDS or DynamoDB database
 - Add another Lambda Function that gets a random message from the newly created database and send message to the current Lambda that sends it using SES
 - Instead of having event bridge trigger the lambda, create step function that triggers the database lambda, which sends the message to the SES Lambda
-- Since RDS or DynamoDB would be a private databse, put all resources into their proper private and Public subnets within the VPC
+- Since RDS or DynamoDB would be a private database, put all resources into their proper private and public subnets within the VPC
 
 ## 🛠️ Do It Yourself!
 
